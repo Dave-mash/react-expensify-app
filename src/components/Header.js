@@ -1,15 +1,13 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-
-const Header = (props) => (
-    <div>
-        <h1>{props.title}</h1>
-        {props.subtitle && <p>{props.subtitle}</p>}
-    </div>
+const Header = () => (
+    <header>
+        <h1>Expensify</h1>
+        <NavLink to="/" activeClassName="is-active" exact={true} >Dashboard</NavLink> <br />
+        <NavLink to="/create" activeClassName="is-active" >Create Expense</NavLink><br />
+        {/* <NavLink to="/edit" activeClassName="is-active" >Edit Expense</NavLink><br /> */}
+    </header>
 );
-
-Header.defaultProps = {
-    title: 'Task Manager'
-}
 
 export default Header;
